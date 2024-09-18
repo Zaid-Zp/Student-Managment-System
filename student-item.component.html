@@ -1,0 +1,13 @@
+<div class="card" (click)="goToDetail(student.id)">
+  <div class="img-wrapping">
+    <img [src]="student.img" class="card-img-top" alt="...">
+  </div>
+    <div class="card-body">
+      <h5 class="card-title">{{student.name}}</h5>
+      <p class="card-text">{{student.number}}</p>
+      <p class="card-text">{{student.email}}</p>
+      <a  (click)="delete()" class="btn btn-primary">DELETE</a>&nbsp;
+    <!--   <a class="btn btn-primary" (click)="goToDetail(student.id)">VIEW</a>&nbsp; -->
+      <a class="btn btn-primary" (click)="goToupdate(student.id)">UPDATE</a>
+    </div>
+  </div>

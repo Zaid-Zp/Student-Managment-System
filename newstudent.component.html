@@ -1,0 +1,112 @@
+<form class="needs-validation" [formGroup]="studentForm" novalidate>
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="img" class="form-label">Image</label>
+          <input
+            type="text"
+            class="form-control is-invalid"
+            id="img"
+            placeholder="Enter Image Url"
+            formControlName="img"
+            [ngClass]="{
+              'is-invalid':studentForm.get('img')?.touched && studentForm.get('img')?.invalid }"
+            >
+         <div *ngIf="studentForm.get('img')?.touched && studentForm.get('img')?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('img')?.errors?.['required']">IMGURL is required.</div>
+
+        </div>
+       </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control is-invalid"
+            id="name"
+            placeholder="Enter name"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid':studentForm.get('name')?.touched && studentForm.get('name')?.invalid }"
+            >
+         <div *ngIf="studentForm.get('name')?.touched && studentForm.get('name')?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('name')?.errors?.['required']">Name is required.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('name')?.errors?.['maxlength']">Maximum 16 char allowed.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('name')?.errors?.['minlength']">Minimum 2 char required.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('name')?.errors?.['pattern']">Numbers not allowed.</div>
+        </div>
+       </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            placeholder="Enter age"
+            formControlName="age"
+            [ngClass]="{
+              'is-invalid':studentForm.get('age')?.touched && studentForm.get('age')?.invalid }"
+            >
+         <div *ngIf="studentForm.get('age')?.touched && studentForm.get('age')?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('age')?.errors?.['required']">AGE is required.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('age')?.errors?.['min']">Minimum 18 age</div>
+
+        </div>
+       </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid':studentForm.get('email')?.touched && studentForm.get('email')?.invalid }"
+            >
+         <div *ngIf="studentForm.get('email')?.touched && studentForm.get('email')?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('email')?.errors?.['email']">Email  formate is required.</div>
+          </div>
+       </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="number" class="form-label">Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="number"
+            placeholder="Enter number"
+            formControlName="number"
+            [ngClass]="{
+              'is-invalid':studentForm.get('number')?.touched && studentForm.get('number')?.invalid }"
+            >
+         <div *ngIf="studentForm.get('number')?.touched && studentForm.get('number')?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('number')?.errors?.['required']">Number is required.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('number')?.errors?.['maxlength']">Maximum 10 number allowed.</div>
+          <div class="invalid-feedback d-block" *ngIf="studentForm.get('number')?.errors?.['minlength']">Minimum 10 number required.</div>
+          </div>
+       </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <button
+          class="btn btn-primary" (click)="addstudent()" [disabled]="studentForm.invalid">
+          Submit
+        </button>
+        &nbsp;
+        <button
+        class="btn btn-primary" (click)="backtoList()">
+        BACK
+      </button>
+      </div>
+    </div>
+  </form>
+  

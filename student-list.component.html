@@ -1,0 +1,17 @@
+<br> 
+<div class="d-flex justify-content-between">
+    <h2><mark>Go Here For New Student &rarr;</mark> </h2>
+    <button class=" btn btn-primary" (click)="gotonew()">NEW</button>
+</div>
+<div class="mb-3">
+    <label for="search" class="form-label">Search</label>
+    <input type="text" class="form-control" id="search" placeholder="Search by name" [(ngModel)]="search" (input)="searchByName()"
+     />
+  
+  </div>
+<br>
+<div class="row">
+    <div class="col-3 mb-2" *ngFor="let std of studentfilterlist;let i=index">
+        <app-student-item [student]="std" (onDelete)="deletestudent(i)"></app-student-item>
+    </div>
+</div>

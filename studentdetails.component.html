@@ -1,0 +1,21 @@
+<p>studentdetails works!</p>
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="studentone?.img" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2>NAME</h2>
+          <h5 class="card-title">{{studentone?.name}}</h5>
+          <h2>AGE</h2>
+          <p class="card-text">{{studentone?.age}}</p>
+          <h2>EMAIL</h2>
+          <p class="card-text"><small class="text-body-secondary">{{studentone?.email}}</small></p>
+          <h2>CONTACT</h2>
+          <p class="card-text">{{studentone?.number}}</p>
+          <button class="btn btn-primary" (click)="gotoList()">BACK</button>
+        </div>
+      </div>
+    </div>
+  </div>
